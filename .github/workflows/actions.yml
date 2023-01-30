@@ -25,9 +25,10 @@ jobs:
         run: pnpm install
 
       - name: Install dependencies frontend
+        working-directory: ./frontend
         run: |
-          pnpm --filter frontend install --shamefully-hoist
-          pnpm --filter frontend generate
+          pnpm install --shamefully-hoist
+          pnpm generate
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
