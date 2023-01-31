@@ -1,2 +1,2 @@
-import Button from "../src/stories/Button.vue";
+import Button from "../src/components/Button.vue";
 export { Button };

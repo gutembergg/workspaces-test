@@ -20,15 +20,15 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
 
-      - name: Install dependencies ui
-        working-directory: ./ui
-        run: pnpm install
-
       - name: Install dependencies frontend
         working-directory: ./frontend
         run: |
-          pnpm install --shamefully-hoist
+          pnpm install 
           pnpm generate
+
+      - name: Install dependencies ui
+        working-directory: ./ui
+        run: pnpm install
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
